@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Register
 # Create your views here.
 def home(request):
     return render(request,"app/home.html")
@@ -22,7 +23,7 @@ def Send_Student_Info(request):
         year = request.POST['year']
         branch = request.POST['branch']
         comment = request.POST['comment']
-        print(fname,mname,lname,Phone1,Phone2,email,address,city,district,state,pin,gender,course,year,branch,comment)
+        Register(fname = fname,mname = mname,lname = lname,Phone1 = Phone1,Phone2 = Phone2,email = email,address = address,city = city,district = district,state = state,pin = pin,gender = gender,course = course,year = year,branch = branch,comment = comment).save()
         msg = "Student Record Successfully Submitted.."
         return render(request,"app/home.html",{'msg':msg})
     else:
