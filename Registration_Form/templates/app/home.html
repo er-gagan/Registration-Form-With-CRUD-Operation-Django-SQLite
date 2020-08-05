@@ -12,53 +12,19 @@
         <input type="text" class="form-control" id="fname" name="fname">
       </div>
       <div class="form-group col-md-4">
-        <label for="mname">Middle Name</label>
-        <input type="text" class="form-control" id="mname" name="mname">
-      </div>
-      <div class="form-group col-md-4">
         <label for="lname">Last Name</label>
         <input type="text" class="form-control" id="lname" name="lname">
       </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-3">
-        <label for="Phone1">Phone 1</label>
+      <div class="form-group col-md-4">
+        <label for="Phone1">Phone</label>
         <input type="text" class="form-control" id="Phone1" name="Phone1">
       </div>
-      <div class="form-group col-md-3">
-        <label for="Phone2">Phone 2</label>
-        <input type="text" class="form-control" id="Phone2" name="Phone2">
-      </div>
+    </div>
+    <div class="form-row">
       <div class="form-group col-md-6">
         <label for="Email">Email Address</label>
         <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" name="email">
       </div>
-    </div>
-    <div class="form-group">
-      <label for="Address">Address</label>
-      <input type="text" class="form-control" id="Address" placeholder="Apartment, studio, or floor"
-        name="address">
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="city">City</label>
-        <input type="text" class="form-control" id="city" name="city">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="District">District</label>
-        <input type="text" class="form-control" id="District" name="district">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="State">State</label>
-        <input type="text" class="form-control" id="State" name="state">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="PIN/ZIP">PIN/ZIP Code</label>
-        <input type="text" class="form-control" id="PIN/ZIP" name="pin">
-      </div>
-    </div>
-
-    <div class="form-row form-group">
       <div class="col">
         <label for="inputGender">Gender</label><br>
         <div class="form-check form-check-inline ml-5">
@@ -74,10 +40,33 @@
           <label class="form-check-label" for="inlineRadio3">Other</label>
         </div>
       </div>
-      <!--  -->
+    </div>
+    <div class="form-group">
+      <label for="Address">Address</label>
+      <input type="text" class="form-control" id="Address" placeholder="Apartment, studio, or floor" name="address">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="PIN/ZIP">PIN/ZIP Code</label>
+        <input type="text" class="form-control" id="PIN/ZIP" name="pin">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="branch">Branch</label>
+        <select name="branch" class="form-control" id="branch">
+          <option hidden>Select Branch</option>
+          <option>Computer Science Engineer</option>
+          <option>Mechanical Engineer</option>
+          <option>Civil Engineer</option>
+          <option>Management</option>
+        </select>
+      </div>
     </div>
     <div class="row">
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="course">Course</label>
         <select name="course" class="form-control" id="course">
           <option hidden>Select Course</option>
@@ -90,7 +79,7 @@
           <option>BCOM</option>
         </select>
       </div>
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="year">Year</label>
         <select name="year" class="form-control" id="year">
           <option hidden>Select Year</option>
@@ -100,23 +89,13 @@
           <option>4th</option>
         </select>
       </div>
-      <div class="form-group col-md-4">
-        <label for="branch">Branch</label>
-        <select name="branch" class="form-control" id="branch">
-          <option hidden>Select Branch</option>
-          <option>Computer Science Engineer</option>
-          <option>Mechanical Engineer</option>
-          <option>Civil Engineer</option>
-          <option>Management</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="comment">Any Comment:</label>
-      <textarea class="form-control" rows="3" placeholder="Write your thinking about this.."
-        name="comment" id="comment"></textarea>
     </div>
     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
   </form>
+  <div id="showbtn" style="max-width: fit-content; margin-left:110px; margin-top:-48px;">
+  <form action="show" method="get">
+    <input type="submit" class="btn btn-secondary btn-lg" value="Show Records">
+  </form>
+</div>
 </div>
 {% endblock body %}
