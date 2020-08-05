@@ -12,17 +12,17 @@ def Send_Student_Info(request):
         Phone1 = request.POST['Phone1']
         Phone2 = request.POST['Phone2']
         email = request.POST['email']
-        Current_Address = request.POST['Current_Address']
-        Permanent_Address = request.POST['Permanent_Address']
+        address = request.POST['address']
         city = request.POST['city']
         district = request.POST['district']
         state = request.POST['state']
         pin = request.POST['pin']
-        fname = request.POST['fname']
-        fname = request.POST['fname']
-        fname = request.POST['fname']
-        fname = request.POST['fname']
+        gender = request.POST['Gender']
+        course = request.POST['course']
+        year = request.POST['year']
+        branch = request.POST['branch']
         comment = request.POST['comment']
+        print(fname,mname,lname,Phone1,Phone2,email,address,city,district,state,pin,gender,course,year,branch,comment)
         msg = "Student Record Successfully Submitted.."
         return render(request,"app/home.html",{'msg':msg})
     else:

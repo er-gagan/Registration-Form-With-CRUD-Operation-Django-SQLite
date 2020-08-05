@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
-{% load static %}
+<!-- {% load static %} -->
 {% block body %}
-<script src="{% static 'js/home.js' %}"></script>
 <div class="container my-3">
   <h5>{{msg}}</h5>
   <h3 class="text-center text-underline"><u>Student Registration Form</u></h3>
-  <form action="Send_Student_Info" method="POST">
+  <form action="Send_Student_Info" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-row">
       <div class="form-group col-md-4">
@@ -35,23 +34,10 @@
         <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" name="email">
       </div>
     </div>
-
     <div class="form-group">
-      <label for="CurrentAddress">Current Address</label>
-      <input type="text" class="form-control" id="CurrentAddress" placeholder="1234 Main St" name="Current_Address">
-    </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck" onclick="fun1()">
-        <label class="form-check-label" for="gridCheck">
-          If your <b>Current Address</b> is same as <b>Permanent Address</b>, if yes then check it, else uncheck it.
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="PermanentAddress">Permanent Address</label>
-      <input type="text" class="form-control" id="PermanentAddress" placeholder="Apartment, studio, or floor"
-        name="Permanent_Address">
+      <label for="Address">Address</label>
+      <input type="text" class="form-control" id="Address" placeholder="Apartment, studio, or floor"
+        name="address">
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
@@ -76,7 +62,7 @@
       <div class="col">
         <label for="inputGender">Gender</label><br>
         <div class="form-check form-check-inline ml-5">
-          <input class="form-check-input" type="radio" name="Gender" id="inlineRadio1" value="Male">
+          <input class="form-check-input" type="radio" checked name="Gender" id="inlineRadio1" value="Male">
           <label class="form-check-label" for="inlineRadio1">Male</label>
         </div>
         <div class="form-check form-check-inline">
@@ -93,7 +79,7 @@
     <div class="row">
       <div class="form-group col-md-4">
         <label for="course">Course</label>
-        <select class="form-control" id="course">
+        <select name="course" class="form-control" id="course">
           <option hidden>Select Course</option>
           <option>BBA</option>
           <option>BCA</option>
@@ -105,8 +91,8 @@
         </select>
       </div>
       <div class="form-group col-md-4">
-        <label for="course">Year</label>
-        <select class="form-control" id="course">
+        <label for="year">Year</label>
+        <select name="year" class="form-control" id="year">
           <option hidden>Select Year</option>
           <option>1st</option>
           <option>2nd</option>
@@ -115,8 +101,8 @@
         </select>
       </div>
       <div class="form-group col-md-4">
-        <label for="course">Branch</label>
-        <select class="form-control" id="course">
+        <label for="branch">Branch</label>
+        <select name="branch" class="form-control" id="branch">
           <option hidden>Select Branch</option>
           <option>Computer Science Engineer</option>
           <option>Mechanical Engineer</option>
@@ -127,7 +113,7 @@
     </div>
     <div class="form-group">
       <label for="comment">Any Comment:</label>
-      <textarea required class="form-control" rows="3" placeholder="Write your thinking about this.."
+      <textarea class="form-control" rows="3" placeholder="Write your thinking about this.."
         name="comment" id="comment"></textarea>
     </div>
     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
