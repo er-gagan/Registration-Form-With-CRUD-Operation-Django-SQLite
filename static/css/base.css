@@ -1,0 +1,10 @@
+.nav-container {
+    background-color: #333232;
+    padding: 15px;
+}
+
+.nav-text {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
